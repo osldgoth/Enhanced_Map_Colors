@@ -41,7 +41,7 @@ default_style.entity_style = {
   height = 38,
   top_padding = 1,
   right_padding = 0,
-  bottom_padding = 1,
+  bottom_padding = 0,
   left_padding = 2,
   default_graphical_set =
 		{
@@ -77,7 +77,7 @@ default_style.map_color_graphic_basic = {
 
   top_padding = 1,
   right_padding = 1,
-  bottom_padding = 1,
+  bottom_padding = 0,
   left_padding = 1,
 
   width = 48,
@@ -380,6 +380,7 @@ default_style.EMC_frame_style =
       type = "frame_style",
       font = "default-frame",
       font_color = {r=1, g=1, b=1},
+			maximal_height = 255,
       -- padding of the title area of the frame, when the frame title
       -- is empty, the area doesn't exist and these values are not used
       title_top_padding = 0,
