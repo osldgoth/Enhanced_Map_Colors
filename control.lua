@@ -26,7 +26,7 @@ end
 function legendDropdown() --clean up required?
 	for _, p in pairs(game.players) do
 		local guiTop = p.gui.top
-		if guiTop["EMC_frame"] == nil then
+		if guiTop["EMC_frame"] ~= nil then
 			guiTop.add{type="frame", name="EMC_frame", caption="Entity: Color", direction="vertical", style="frame_style"}
 			guiTop.EMC_frame.style.maximal_height = 50
 			guiTop.EMC_frame.style.minimal_width = 110
@@ -49,9 +49,15 @@ function legendDropdown() --clean up required?
 				guiTop.EMC_frame.add{type="button", name="b3c", style = "map_color_graphic_express"}
 				guiTop.EMC_frame.style.maximal_height = guiTop.EMC_frame.style.maximal_height + 45
 			end
-			guiTop.EMC_frame.add{type="sprite-button", name="p", tooltip = "All pipes, pipe to ground, and storage tanks", sprite="entity/pipe", style="entity_style"}
-			guiTop.EMC_frame.add{type="button", name="pc", style = "map_color_graphic_ptg"}
-			guiTop.EMC_frame.style.maximal_height = guiTop.EMC_frame.style.maximal_height + 45
+			if game.forces.player.technologies["fluid-handling"].researched then
+				guiTop.EMC_frame.add{type="sprite-button", name="storage-tank", tooltip = "All pipes, pipe to ground, and storage tanks", sprite="entity/storage-tank", style="entity_style"}
+				guiTop.EMC_frame.add{type="button", name="storage-tankc", style = "map_color_graphic_ptg"}
+				guiTop.EMC_frame.style.maximal_height = guiTop.EMC_frame.style.maximal_height + 45
+			else
+				guiTop.EMC_frame.add{type="sprite-button", name="p", tooltip = "All pipes, pipe to ground, and storage tanks", sprite="entity/pipe", style="entity_style"}
+				guiTop.EMC_frame.add{type="button", name="pc", style = "map_color_graphic_ptg"}
+				guiTop.EMC_frame.style.maximal_height = guiTop.EMC_frame.style.maximal_height + 45
+			end
 			if game.forces.player.technologies["logistic-robotics"].researched or game.forces.player.technologies["construction-robotics"].researched then
 				guiTop.EMC_frame.add{type="sprite-button", name="ro", sprite="entity/roboport", style="entity_style"}
 				guiTop.EMC_frame.add{type="button", name="roc", style = "map_color_graphic_port"}

@@ -374,35 +374,3 @@ default_style.visible_bots_logistic = {
   hovered_graphical_set = color_graphics( 13,  63),
   clicked_graphical_set = color_graphics( 13,  63)
 }
-
-default_style.EMC_frame_style =
-    {
-      type = "frame_style",
-      font = "default-frame",
-      font_color = {r=1, g=1, b=1},
-			maximal_height = 255,
-      -- padding of the title area of the frame, when the frame title
-      -- is empty, the area doesn't exist and these values are not used
-      title_top_padding = 0,
-      title_left_padding = 0,
-      title_bottom_padding = 0,
-      title_right_padding = 0,
-      -- padding of the content area of the frame
-      top_padding  = default_container_padding - 6,
-      right_padding = default_container_padding,
-      bottom_padding = default_container_padding,
-      left_padding = default_container_padding,
-      graphical_set =
-      {
-        type = "composition",
-        filename = "__core__/graphics/gui.png",
-        priority = "extra-high-no-scale",
-        corner_size = {3, 3},
-        position = {8, 0}
-      },
-      flow_style=
-      {
-        horizontal_spacing = default_container_padding - 8,
-        vertical_spacing = default_container_padding
-      }
-    }
