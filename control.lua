@@ -1,39 +1,21 @@
---redraws map to update colors when mod is installed on old save games.
 function pprint(msg)
 	for i, p in pairs(game.players) do
 		p.print(tostring(msg).." "..i)
 	end
 end
 
-function containsTech(techName)
-	if game.forces.player.technologies[techName] then
-		if game.forces.player.technologies[techName].researched then
-			return true
-		else
-			return false
-		end
-	end
-end
-
 --GUI
-function mainButton()
-	for _, p in pairs(game.players) do
-		local guiTop = p.gui.top
-		if guiTop["EMC_legend_Main"] == nil then
-			guiTop.add{type="button", name="EMC_legend_Main", caption="EMC", tooltip="Map Legend"}
-		end
+function mainButton(guiTop)
+	if guiTop["EMC_legend_Main"] == nil then --and?
+		guiTop.add{type="button", name="EMC_legend_Main", caption="EMC", tooltip="Map Legend"}
 	end
 end
 
-function legendDropdown(player) --clean up required?
-	local guiTop = player.gui.top
-
+function legendDropdown(guiTop) --clean up required?
 	guiTop.add{type="frame", name="EMC_frame", caption="Entity: Color", direction="vertical", style="frame_style"}
 	guiTop.EMC_frame.style.maximal_height = 50
 	guiTop.EMC_frame.style.minimal_width = 110
 	guiTop.EMC_frame.style.maximal_width = 130
-	--[[if containsTech(item) then
-	end--]] -- switch to ?
 	if game.forces.player.technologies["logistics"].researched then
 		guiTop.EMC_frame.add{type="sprite-button", name="b1", sprite="entity/transport-belt", style="entity_style"}
 		guiTop.EMC_frame.add{type="button", name="b1c", style = "map_color_graphic_basic"}
@@ -141,17 +123,30 @@ function legendDropdown(player) --clean up required?
 	guiTop.EMC_frame.style.maximal_height = guiTop.EMC_frame.style.maximal_height + 50
 end
 
-script.on_init(mainButton) --for single player games or host of multi-player games
+script.on_init(function()
+		for _,p in pairs(game.players) do
+			mainButton(p.gui.top)
+		end
+	end
+)
 
-script.on_event(defines.events.on_player_joined_game, mainButton) --for multi-player games (players that join after host) --add rechart? 
+script.on_event(defines.events.on_player_created, function(event)  --for single player games or host of multi-player games
+		mainButton(game.players[event.player_index].gui.top)
+	end
+) 
+
+script.on_event(defines.events.on_player_joined_game, function(event)  --for multi-player games (players that join after host) --add rechart?
+		mainButton(game.players[event.player_index].gui.top)
+	end
+)  
 
 script.on_event(defines.events.on_gui_click, function(event)
 		if event.element.name == "EMC_legend_Main" then
 			event.element.destroy()
-			legendDropdown(game.players[event.player_index])
+			legendDropdown(game.players[event.player_index].gui.top)
 		elseif event.element.name == "close" then
 			event.element.parent.destroy()
-			mainButton()
+			mainButton(game.players[event.player_index].gui.top)
 		end
 	end
 )
@@ -161,12 +156,13 @@ script.on_event(defines.events.on_research_finished, function()
 			local guiTop = p.gui.top
 			if guiTop.EMC_frame then
 				guiTop.EMC_frame.destroy()
-				legendDropdown(p)
+				legendDropdown(guiTop)
 			end
 		end
 	end
 )
 
+--redraws map to update colors when mod is installed on old save games.
 script.on_configuration_changed(function(data) --add new_version? --ask for more info on this? or use "for modName,_ in pairs(game.active_mods) do" ?
 		if data.mod_changes ~= nil and data.mod_changes["Enhanced_Map_Colors"] ~= nil then
 			if data.mod_changes["Enhanced_Map_Colors"].old_version == nil then
@@ -179,10 +175,6 @@ script.on_configuration_changed(function(data) --add new_version? --ask for more
 		end
 	end
 )
-
-
-
-
 
 
 
