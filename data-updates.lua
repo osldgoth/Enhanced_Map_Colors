@@ -1,3 +1,13 @@
+-- changes color of base belts
+data.raw["transport-belt"]["transport-belt"].friendly_map_color = {r = .98, g = .73, b = 0.0} -- 250, 186, 0
+data.raw["transport-belt"]["fast-transport-belt"].friendly_map_color = {r = .98, g = .27, b = .06} -- 250, 69, 15 
+data.raw["transport-belt"]["express-transport-belt"].friendly_map_color = {r = .15, g = .67, b = .71}  -- 38, 171, 181
+
+--changes color of pipes/storage tank
+data.raw["pipe"]["pipe"].friendly_map_color = {r = .29, g = .09, b = .56} -- 74, 23, 143
+data.raw["pipe-to-ground"]["pipe-to-ground"].friendly_map_color = {r = .29, g = .09, b = .56}
+data.raw["storage-tank"]["storage-tank"].friendly_map_color = {r = .29, g = .09, b = .56}
+
 --Bob's Belts
 if data.raw["transport-belt"]["green-transport-belt"] ~= nil then
 	data.raw["transport-belt"]["green-transport-belt"].friendly_map_color = {r = .07, g = 1.0, b = .62} -- 18, 255, 158
