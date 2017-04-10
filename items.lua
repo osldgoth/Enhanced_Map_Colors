@@ -86,6 +86,7 @@ if data.raw["item"]["5d-mk5-transport-belt"] ~= nil then
 	EMC_belt_highlight_mk5_item.flags = {"hidden"}
 	data:extend({EMC_belt_highlight_mk5_item})
 end
+--[[
 -- DyTech
 if data.raw["item"]["super-transport-belt"] ~= nil then
 	local EMC_belt_highlight_super_item = table.deepcopy(data.raw["item"]["super-transport-belt"])
@@ -100,5 +101,5 @@ if data.raw["item"]["extreme-transport-belt"] ~= nil then
 	EMC_belt_highlight_extreme_item.place_result = "EMC_belt_highlight_y"
 	EMC_belt_highlight_extreme_item.flags = {"hidden"}
 	data:extend({EMC_belt_highlight_extreme_item})
-end
+end--]]
 --]]

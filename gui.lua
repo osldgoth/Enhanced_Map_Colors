@@ -75,6 +75,7 @@ function legendDropdown(guiLeft) --clean up required? --add filters? is that pos
 				frame.style.maximal_height = frame.style.maximal_height + 45
 			end
 		end
+		--[[ will delete in future update
 		if modName == "MAIN-DyTech-Machine" then
 			if tech["logistics-4"].researched then
 				frame.add{type="sprite-button", name="dTb4", sprite = "item/super-transport-belt", style="entity_style"}
@@ -87,10 +88,11 @@ function legendDropdown(guiLeft) --clean up required? --add filters? is that pos
 				frame.style.maximal_height = frame.style.maximal_height + 45
 			end
 		end
+		--]]
 		if modName == "UraniumPower" then
 			if tech["uranium-processing"].researched then
 				steam = true
-				frame.add{type="sprite-button", name="eam", tooltip = "Uranium Power", --[[sprite="entity/turbine-generator/turbinegeniconLU",--]] style="entity_style"}
+				frame.add{type="sprite-button", name="eam", tooltip = "Uranium Power", sprite="technology/uranium-processing", style="entity_style"}
 				frame.add{type="button", name="eamc", style = "map_color_graphic_steam"}
 				frame.style.maximal_height = frame.style.maximal_height + 45
 			end
