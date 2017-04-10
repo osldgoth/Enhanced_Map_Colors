@@ -1,3 +1,4 @@
+require "config"
 require "gui"
 
 local function pprint(msg)
@@ -5,16 +6,36 @@ local function pprint(msg)
 end
 
 
-local function rechart(var)
-	if var == "new-install" then
-		pprint("No Enhanced Map Colors previously installed, calling rechart for player ")
-	elseif var == "old-install" then
-		pprint("Old Enhanced Map Colors version previously installed, calling rechart for player ")
+--[[ --IGNORE THIS CODE
+local function findAllBelts(force)
+	for _,surface in pairs(game.surfaces) do
+		for i, entity in pairs(surface.find_entities_filtered({type = "transport-belt", force = force})) do 
+			if global.allBelts ~= nil and entity.valid then
+				global.allBelts[#global.allBelts + 1] = entity
+			end
+		end
 	end
+end
+
+local function addBeltToGlobal(entity)
+	global.allBelts[#global.allBelts + 1] = entity
+end
+
+local function removeBeltFromGlobal(entity) --add some debug?
+	for i,x in pairs(global.allBelts) do
+		if x == entity then
+			global.allBelts[i] = nil
+		end
+	end
+end
+
+--]]
+local function rechart(msg)
+	pprint(msg)
 	game.forces.player.rechart()
 end
 	
-local function destroyOldMainGuiButtons()
+local function destroyOldMainGuiButton()
 	for _,p in pairs(game.players) do
 		if p.gui.top.EMC_legend_Main then
 			p.gui.top.EMC_legend_Main.destroy()
@@ -25,15 +46,55 @@ local function destroyOldMainGuiButtons()
 	end
 end
 
-script.on_event({defines.events.on_player_created, defines.events.on_player_joined_game}, function()
-		destroyOldMainGuiButtons()
+--[[ --IGNORE THIS CODE
+script.on_init(function()
+		pprint("this is config: "..tostring(Belt_Overlay_Functionality))
+		if Belt_Overlay_Functionality then
+			global.locked_state = false
+			global.allBelts = global.allBelts or {}
+			if #global.allBelts == 0 then
+				findAllBelts(game.players[1].force)
+			end
+		end
 	end
 )
+
+script.on_event({defines.events.on_built_entity, defines.events.on_robot_built_entity}, function(event)
+		if event.created_entity.type == "transport-belt"  and game.players[event.player_index].force == entity.force then
+			addBeltToGlobal(event.created_entity)
+		end
+	end
+)
+script.on_event({defines.events.on_preplayer_mined_item, defines.events.on_robot_pre_mined, on_entity_died}, function(event)
+		if event.entity.type == "transport-belt"  and game.players[event.player_index].force == entity.force and (adminOnly or/and? game.players[event.player_index].admin) --- then
+			removeBeltFromGlobal(event.entity)
+		end
+	end
+)
+
+script.on_event({defines.events.on_player_created, defines.events.on_player_joined_game}, function(event)
+		if Belt_Overlay_Functionality then
+			if global.allBelts == nil then
+				global.allBelts = global.allBelts or {}
+			end
+			if #global.allBelts == 0 then
+				findAllBelts(game.players[event.player_index].force)
+			end
+		end
+		destroyOldMainGuiButton()
+	end
+)--]]
 
 script.on_event(defines.events.on_gui_click, function(event)
 		if event.element.name == "close" then
 			event.element.parent.destroy()
 		end
+		
+--[[ --IGNORE THIS CODE
+		if event.element.name == "see_on_map" and not locked_state then --lock for ~2minutes after a player clicks on it
+			--call crafting here?
+				pprint("this is the number of belts: "..#global.allBelts)
+		end--]]
 	end
 )
 
@@ -52,11 +113,11 @@ script.on_event(defines.events.on_research_finished, function()
 script.on_configuration_changed(function(data)
 		if data.mod_changes ~= nil and data.mod_changes["Enhanced_Map_Colors"] ~= nil then
 			if data.mod_changes["Enhanced_Map_Colors"].old_version == nil then -- saved game, no mod
-				rechart("new-install")
+				rechart("No Enhanced Map Colors previously installed, calling rechart for player ")
 			elseif data.mod_changes.Enhanced_Map_Colors.old_version <= "1.3.9" then --save game, old mod version 
-				destroyOldMainGuiButtons() --not really needed
-				if data.mod_changes.Enhanced_Map_Colors.old_version <= "1.3.5" then --save game, old mod version --last color change
-					rechart("old-install")
+				destroyOldMainGuiButton() --not really needed
+				if data.mod_changes.Enhanced_Map_Colors.old_version <= "1.3.10" then --save game, old mod version --last color change pre 0.15.x
+					rechart("Old Enhanced Map Colors version previously installed, calling rechart for player ")
 				end
 			end
 		end

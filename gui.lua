@@ -1,6 +1,8 @@
+require "config"
 --GUI
 
 function legendDropdown(guiLeft) --clean up required? --add filters? is that possible?
+	local steam = false
 	local tech = game.forces.player.technologies
 	guiLeft.add{type="frame", name="EMC_frame", caption="Entity: Color", direction="vertical", style="frame_style"}
 	local frame = guiLeft.EMC_frame
@@ -23,17 +25,17 @@ function legendDropdown(guiLeft) --clean up required? --add filters? is that pos
 		frame.style.maximal_height = frame.style.maximal_height + 45
 	end
 	if tech["fluid-handling"].researched then
-		frame.add{type="sprite-button", name="storage-tank", tooltip = "All pipes, pipe to ground, and storage tanks", sprite="entity/storage-tank", style="entity_style"}
-		frame.add{type="button", name="storage-tankc", style = "map_color_graphic_ptg"}
+		frame.add{type="sprite-button", name="tank", tooltip = "All pipes, pipe to ground, and storage tanks", sprite="entity/storage-tank", style="entity_style"}
+		frame.add{type="button", name="tankc", style = "map_color_graphic_ptg"}
 		frame.style.maximal_height = frame.style.maximal_height + 45
 	else
-		frame.add{type="sprite-button", name="p", tooltip = "All pipes, pipe to ground, and storage tanks", sprite="entity/pipe", style="entity_style"}
-		frame.add{type="button", name="pc", style = "map_color_graphic_ptg"}
+		frame.add{type="sprite-button", name="pip", tooltip = "All pipes, pipe to ground, and storage tanks", sprite="entity/pipe", style="entity_style"}
+		frame.add{type="button", name="pipc", style = "map_color_graphic_ptg"}
 		frame.style.maximal_height = frame.style.maximal_height + 45
 	end
 	if tech["logistic-robotics"].researched or tech["construction-robotics"].researched then
-		frame.add{type="sprite-button", name="ro", sprite="entity/roboport", style="entity_style"}
-		frame.add{type="button", name="roc", style = "map_color_graphic_port"}
+		frame.add{type="sprite-button", name="rob", tooltip = "Roboports", sprite="entity/roboport", style="entity_style"}
+		frame.add{type="button", name="robc", style = "map_color_graphic_port"}
 		frame.style.maximal_height = frame.style.maximal_height + 45
 	end
 	for modName,_ in pairs(game.active_mods) do
@@ -85,32 +87,80 @@ function legendDropdown(guiLeft) --clean up required? --add filters? is that pos
 				frame.style.maximal_height = frame.style.maximal_height + 45
 			end
 		end
+		if modName == "UraniumPower" then
+			if tech["uranium-processing"].researched then
+				steam = true
+				frame.add{type="sprite-button", name="eam", tooltip = "Uranium Power", --[[sprite="entity/turbine-generator/turbinegeniconLU",--]] style="entity_style"}
+				frame.add{type="button", name="eamc", style = "map_color_graphic_steam"}
+				frame.style.maximal_height = frame.style.maximal_height + 45
+			end
+		end
 	end
-	frame.add{type="sprite-button", name="r", sprite="entity/radar", style="entity_style"}
-	frame.add{type="button", name="rc", style = "map_color_graphic_radar"}
+	frame.add{type="sprite-button", name="rad", tooltip = "Radar", sprite="entity/radar", style="entity_style"}
+	frame.add{type="button", name="radc", style = "map_color_graphic_radar"}
 	frame.style.maximal_height = frame.style.maximal_height + 45
 	if tech["electric-energy-distribution-2"].researched then
-		frame.add{type="sprite-button", name="s", tooltip = "All Electric Poles", sprite="entity/substation", style="entity_style"}
-		frame.add{type="button", name="sc", style = "map_color_graphic_medium"}
+		frame.add{type="sprite-button", name="sub", tooltip = "All Electric Poles", sprite="entity/substation", style="entity_style"}
+		frame.add{type="button", name="subc", style = "map_color_graphic_medium"}
 		frame.style.maximal_height = frame.style.maximal_height + 45
 	elseif tech["electric-energy-distribution-1"].researched then
-		frame.add{type="sprite-button", name="m", tooltip = "All Electric Poles", sprite="entity/medium-electric-pole", style="entity_style"}
-		frame.add{type="button", name="mc", style = "map_color_graphic_medium"}
+		frame.add{type="sprite-button", name="mp", tooltip = "All Electric Poles", sprite="entity/medium-electric-pole", style="entity_style"}
+		frame.add{type="button", name="mpc", style = "map_color_graphic_medium"}
 		frame.style.maximal_height = frame.style.maximal_height + 45
 	else
-		frame.add{type="sprite-button", name="s", sprite="entity/small-electric-pole", style="entity_style"}
-		frame.add{type="button", name="sc", style = "map_color_graphic_medium"}
+		frame.add{type="sprite-button", name="sp", tooltip = "All Electric Poles", sprite="entity/small-electric-pole", style="entity_style"}
+		frame.add{type="button", name="spc", style = "map_color_graphic_medium"}
 		frame.style.maximal_height = frame.style.maximal_height + 45
 	end
 	if tech["solar-energy"].researched then
-		frame.add{type="sprite-button", name="pan", sprite="entity/solar-panel", style= "entity_style"} 
-		frame.add{type="button", name="panc", style = "map_color_graphic_solar"}
+		frame.add{type="sprite-button", name="pan", tooltip = "Solar Panels", sprite="entity/solar-panel", style= "entity_style"}
 		frame.style.maximal_height = frame.style.maximal_height + 45
-	else
-		frame.add{type="sprite-button", name="eam", sprite="entity/steam-engine", style="entity_style"}
-		frame.add{type="button", name="eamc", style = "map_color_graphic_solar"}
+		if Color_v15_Items then
+			frame.add{type="button", name="panc", style = "map_color_graphic_solar"}
+		else
+			frame.add{type="button", name="panc", style = "map_color_graphic_steam"}
+		end
+	elseif not steam then
+		frame.add{type="sprite-button", name="eam", tooltip = "Steam Power", sprite="entity/steam-engine", style="entity_style"}
+		frame.add{type="button", name="eamc", style = "map_color_graphic_steam"}
 		frame.style.maximal_height = frame.style.maximal_height + 45
+	end
+	if Color_v15_Items then
+		if tech["electric-energy-accumulators-1"].researched then
+			frame.add{type="sprite-button", name="acc", tooltip = "Accumulators", sprite="entity/accumulator", style="entity_style"}
+			frame.add{type="button", name="accc", style = "map_color_graphic_accum"}
+			frame.style.maximal_height = frame.style.maximal_height + 45
+		end
+		if tech["laser-turrets"].researched then
+			frame.add{type="sprite-button", name="las", tooltip = "Laser Turrets", sprite="technology/laser-turrets", style="entity_style"}
+			frame.add{type="button", name="lasc", style = "map_color_graphic_turrets"}
+			frame.style.maximal_height = frame.style.maximal_height + 45
+		elseif tech["turrets"].researched then
+			frame.add{type="sprite-button", name="gun", tooltip = "Gun Turrets", sprite="technology/turrets", style="entity_style"}
+			frame.add{type="button", name="gunc", style = "map_color_graphic_turrets"}
+			frame.style.maximal_height = frame.style.maximal_height + 45
+		end
+		if tech["stone-walls"].researched then
+			frame.add{type="sprite-button", name="wall", tooltip = "Walls", sprite="technology/stone-walls", style="entity_style"}
+			frame.add{type="button", name="wallc", style = "map_color_graphic_wall"}
+			frame.style.maximal_height = frame.style.maximal_height + 45
+		end
 	end
 	frame.add{type="button", name="close", caption="Close", style="button_style"}
 	frame.style.maximal_height = frame.style.maximal_height + 50
+	
+	--[[ --IGNORE THIS CODE
+	if Belt_Overlay_Functionality then
+		frame.add{type="button", name="see_on_map", caption="See on Map",  style="button_style"}
+		frame.see_on_map.style.maximal_height = 40
+		frame.style.maximal_height = frame.style.maximal_height + 50
+	end
+	--]]
 end
+
+
+--[[
+function crafting()
+	--force>recipe>t/f
+end
+--]]
