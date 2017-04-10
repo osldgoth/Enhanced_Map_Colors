@@ -18,6 +18,24 @@ local function color_graphics(posX, posY)
     },
   }
 end
+local function color_graphics1(posX, posY)
+  return {
+    type = "monolith",
+		top_monolith_border = 2,
+    right_monolith_border = 0,
+    bottom_monolith_border = 0,
+    left_monolith_border = 0,
+
+    monolith_image = {
+      filename = "__Enhanced_Map_Colors__/graphics/colors1.png",
+      priority = "extra-high-no-scale",
+      width = 12,
+      height = 8,
+      x = posX,
+      y = posY,
+    },
+  }
+end
 
 default_style.entity_style = {
   type = "button_style",
@@ -70,9 +88,9 @@ default_style.map_color_graphic_basic = {
   width = 48,
   width = 38,
 
-  default_graphical_set = color_graphics( 0,  0),
-  hovered_graphical_set = color_graphics( 0,  0),
-  clicked_graphical_set = color_graphics( 0,  0)
+  default_graphical_set = color_graphics(0, 0),
+  hovered_graphical_set = color_graphics(0, 0),
+  clicked_graphical_set = color_graphics(0, 0)
 }
 
 default_style.map_color_graphic_fast = {
@@ -89,9 +107,9 @@ default_style.map_color_graphic_fast = {
   width = 48,
   width = 38,
 
-  default_graphical_set = color_graphics( 0,  9),
-  hovered_graphical_set = color_graphics( 0,  9),
-  clicked_graphical_set = color_graphics( 0,  9)
+  default_graphical_set = color_graphics(0, 9),
+  hovered_graphical_set = color_graphics(0, 9),
+  clicked_graphical_set = color_graphics(0, 9)
 }
 
 default_style.map_color_graphic_express = {
@@ -108,9 +126,9 @@ default_style.map_color_graphic_express = {
   width = 48,
   width = 38,
 
-  default_graphical_set = color_graphics( 0,  18),
-  hovered_graphical_set = color_graphics( 0,  18),
-  clicked_graphical_set = color_graphics( 0,  18)
+  default_graphical_set = color_graphics(0, 18),
+  hovered_graphical_set = color_graphics(0, 18),
+  clicked_graphical_set = color_graphics(0, 18)
 }
 
 default_style.map_color_graphic_ptg = {
@@ -127,9 +145,9 @@ default_style.map_color_graphic_ptg = {
   width = 48,
   width = 38,
 
-	default_graphical_set = color_graphics( 0,  27),
-  hovered_graphical_set = color_graphics( 0,  27),
-  clicked_graphical_set = color_graphics( 0,  27)
+	default_graphical_set = color_graphics(0, 27),
+  hovered_graphical_set = color_graphics(0, 27),
+  clicked_graphical_set = color_graphics(0, 27)
 }
 
 default_style.map_color_graphic_medium = {
@@ -146,12 +164,12 @@ default_style.map_color_graphic_medium = {
 	width = 48,
   width = 38,
 
-  default_graphical_set = color_graphics( 0,  36),
-  hovered_graphical_set = color_graphics( 0,  36),
-  clicked_graphical_set = color_graphics( 0,  36)
+  default_graphical_set = color_graphics(0, 36),
+  hovered_graphical_set = color_graphics(0, 36),
+  clicked_graphical_set = color_graphics(0, 36)
 }
 
-default_style.map_color_graphic_solar = {
+default_style.map_color_graphic_steam = {
   type = "button_style",
   parent = "slot_button_style",
 
@@ -165,9 +183,9 @@ default_style.map_color_graphic_solar = {
   width = 48,
   width = 38,
 
-  default_graphical_set = color_graphics( 0,  45),
-  hovered_graphical_set = color_graphics( 0,  45),
-  clicked_graphical_set = color_graphics( 0,  45)
+  default_graphical_set = color_graphics(0, 45),
+  hovered_graphical_set = color_graphics(0, 45),
+  clicked_graphical_set = color_graphics(0, 45)
 }
 
 default_style.map_color_graphic_port = {
@@ -184,9 +202,9 @@ default_style.map_color_graphic_port = {
   width = 48,
   width = 38,
 
-  default_graphical_set = color_graphics( 13,  54),
-  hovered_graphical_set = color_graphics( 13,  54),
-  clicked_graphical_set = color_graphics( 13,  54)
+  default_graphical_set = color_graphics(13, 54),
+  hovered_graphical_set = color_graphics(13, 54),
+  clicked_graphical_set = color_graphics(13, 54)
 }
 
 default_style.map_color_graphic_radar = {
@@ -203,9 +221,28 @@ default_style.map_color_graphic_radar = {
   width = 48,
   width = 38,
 
-  default_graphical_set = color_graphics( 0,  54),
-  hovered_graphical_set = color_graphics( 0,  54),
-  clicked_graphical_set = color_graphics( 0,  54)
+  default_graphical_set = color_graphics(0, 54),
+  hovered_graphical_set = color_graphics(0, 54),
+  clicked_graphical_set = color_graphics(0, 54)
+}
+
+default_style.map_color_graphic_solar = {
+  type = "button_style",
+  parent = "slot_button_style",
+
+  scalable = true,
+
+  top_padding = 1,
+  right_padding = 1,
+  bottom_padding = 1,
+  left_padding = 1,
+
+  width = 48,
+  width = 38,
+
+  default_graphical_set = color_graphics(0, 72),
+  hovered_graphical_set = color_graphics(0, 72),
+  clicked_graphical_set = color_graphics(0, 72)
 }
 
 default_style.map_color_graphic_bob_logistics_4 = {
@@ -222,9 +259,9 @@ default_style.map_color_graphic_bob_logistics_4 = {
   width = 48,
   width = 38,
 
-  default_graphical_set = color_graphics( 13,  0),
-  hovered_graphical_set = color_graphics( 13,  0),
-  clicked_graphical_set = color_graphics( 13,  0)
+  default_graphical_set = color_graphics(13, 0),
+  hovered_graphical_set = color_graphics(13, 0),
+  clicked_graphical_set = color_graphics(13, 0)
 }
 
 default_style.map_color_graphic_bob_logistics_5 = {
@@ -241,9 +278,9 @@ default_style.map_color_graphic_bob_logistics_5 = {
   width = 48,
   width = 38,
 
-  default_graphical_set = color_graphics( 13,  9),
-  hovered_graphical_set = color_graphics( 13,  9),
-  clicked_graphical_set = color_graphics( 13,  9)
+  default_graphical_set = color_graphics(13, 9),
+  hovered_graphical_set = color_graphics(13, 9),
+  clicked_graphical_set = color_graphics(13, 9)
 }
 
 default_style.map_color_graphic_5dim_transport_4 = {
@@ -260,9 +297,9 @@ default_style.map_color_graphic_5dim_transport_4 = {
   width = 48,
   width = 38,
 
-	default_graphical_set = color_graphics( 13,  18),
-  hovered_graphical_set = color_graphics( 13,  18),
-  clicked_graphical_set = color_graphics( 13,  18)
+	default_graphical_set = color_graphics(13, 18),
+  hovered_graphical_set = color_graphics(13, 18),
+  clicked_graphical_set = color_graphics(13, 18)
 }
 	
 default_style.map_color_graphic_5dim_transport_5 = {
@@ -279,9 +316,9 @@ default_style.map_color_graphic_5dim_transport_5 = {
   width = 48,
   width = 38,
 
-  default_graphical_set = color_graphics( 13,  27),
-  hovered_graphical_set = color_graphics( 13,  27),
-  clicked_graphical_set = color_graphics( 13,  27)
+  default_graphical_set = color_graphics(13, 27),
+  hovered_graphical_set = color_graphics(13, 27),
+  clicked_graphical_set = color_graphics(13, 27)
 }
 
 default_style.map_color_graphic_DyTech_super_4 = {
@@ -298,9 +335,9 @@ default_style.map_color_graphic_DyTech_super_4 = {
   width = 48,
   width = 38,
 
-  default_graphical_set = color_graphics( 13,  36),
-  hovered_graphical_set = color_graphics( 13,  36),
-  clicked_graphical_set = color_graphics( 13,  36)
+  default_graphical_set = color_graphics(13, 36),
+  hovered_graphical_set = color_graphics(13, 36),
+  clicked_graphical_set = color_graphics(13, 36)
 }
 
 default_style.map_color_graphic_DyTech_extreme_5 = {
@@ -317,9 +354,9 @@ default_style.map_color_graphic_DyTech_extreme_5 = {
   width = 48,
   width = 38,
 
-  default_graphical_set = color_graphics( 13,  45),
-  hovered_graphical_set = color_graphics( 13,  45),
-  clicked_graphical_set = color_graphics( 13,  45)
+  default_graphical_set = color_graphics(13, 45),
+  hovered_graphical_set = color_graphics(13, 45),
+  clicked_graphical_set = color_graphics(13, 45)
 }
 
 default_style.visible_bots_construction = {
@@ -337,9 +374,9 @@ default_style.visible_bots_construction = {
   width = 48,
   width = 38,
 
-  default_graphical_set = color_graphics( 0,  63),
-  hovered_graphical_set = color_graphics( 0,  63),
-  clicked_graphical_set = color_graphics( 0,  63)
+  default_graphical_set = color_graphics(0, 63),
+  hovered_graphical_set = color_graphics(0, 63),
+  clicked_graphical_set = color_graphics(0, 63)
 }
 
 default_style.visible_bots_logistic = {
@@ -357,7 +394,67 @@ default_style.visible_bots_logistic = {
   width = 48,
   width = 38,
 
-  default_graphical_set = color_graphics( 13,  63),
-  hovered_graphical_set = color_graphics( 13,  63),
-  clicked_graphical_set = color_graphics( 13,  63)
+  default_graphical_set = color_graphics(13, 63),
+  hovered_graphical_set = color_graphics(13, 63),
+  clicked_graphical_set = color_graphics(13, 63)
+}
+
+default_style.map_color_graphic_accum = {
+
+  type = "button_style",
+  parent = "slot_button_style",
+
+  scalable = true,
+
+  top_padding = 1,
+  right_padding = 1,
+  bottom_padding = 1,
+  left_padding = 1,
+
+  width = 48,
+  width = 38,
+
+  default_graphical_set = color_graphics(13, 72),
+  hovered_graphical_set = color_graphics(13, 72),
+  clicked_graphical_set = color_graphics(13, 72)
+}
+
+default_style.map_color_graphic_wall = {
+
+  type = "button_style",
+  parent = "slot_button_style",
+
+  scalable = true,
+
+  top_padding = 1,
+  right_padding = 1,
+  bottom_padding = 1,
+  left_padding = 1,
+
+  width = 48,
+  width = 38,
+
+  default_graphical_set = color_graphics1(0, 0),
+  hovered_graphical_set = color_graphics1(0, 0),
+  clicked_graphical_set = color_graphics1(0, 0)
+}
+
+default_style.map_color_graphic_turrets = {
+
+  type = "button_style",
+  parent = "slot_button_style",
+
+  scalable = true,
+
+  top_padding = 1,
+  right_padding = 1,
+  bottom_padding = 1,
+  left_padding = 1,
+
+  width = 48,
+  width = 38,
+
+  default_graphical_set = color_graphics1(13, 0),
+  hovered_graphical_set = color_graphics1(13, 0),
+  clicked_graphical_set = color_graphics1(13, 0)
 }
