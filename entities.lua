@@ -74,6 +74,8 @@ if data.raw["transport-belt"]["5d-mk5-transport-belt"] ~= nil then
 	EMC_belt_highlight_mk5.name = "EMC_belt_highlight_mk5"
 	data:extend({EMC_belt_highlight_mk5})
 end
+
+--[[ 
 -- DyTech
 if data.raw["transport-belt"]["super-transport-belt"] ~= nil then
 	local EMC_belt_highlight_super = table.deepcopy(data.raw["transport-belt"]["transport-belt"])
@@ -87,4 +89,6 @@ if data.raw["transport-belt"]["extreme-transport-belt"] ~= nil then
 	EMC_belt_highlight_extreme.name = "EMC_belt_highlight_extreme"
 	data:extend({EMC_belt_highlight_extreme})
 end
+
+--]]
 --]]

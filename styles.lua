@@ -320,7 +320,7 @@ default_style.map_color_graphic_5dim_transport_5 = {
   hovered_graphical_set = color_graphics(13, 27),
   clicked_graphical_set = color_graphics(13, 27)
 }
-
+--[[ will delete in future update
 default_style.map_color_graphic_DyTech_super_4 = {
   type = "button_style",
   parent = "slot_button_style",
@@ -357,7 +357,7 @@ default_style.map_color_graphic_DyTech_extreme_5 = {
   default_graphical_set = color_graphics(13, 45),
   hovered_graphical_set = color_graphics(13, 45),
   clicked_graphical_set = color_graphics(13, 45)
-}
+}--]]
 
 default_style.visible_bots_construction = {
 
