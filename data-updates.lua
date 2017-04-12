@@ -1,45 +1,45 @@
 require "config"
 
 -- changes color of base belts
-data.raw["transport-belt"]["transport-belt"].friendly_map_color = {r = .98, g = .73, b = 0.0} -- 250, 186, 0
-data.raw["splitter"]["splitter"].friendly_map_color = {r = .78, g = .58, b = 0.0} -- 200, 149, 0
-data.raw["underground-belt"]["underground-belt"].friendly_map_color = {r = .74, g = .55, b = 0.0} -- 188, 140, 0
+data.raw["transport-belt"]["transport-belt"].friendly_map_color = {r = 0.98, g = 0.73, b = 0.0} -- 250, 186, 0
+data.raw["splitter"]["splitter"].friendly_map_color = {r = 0.78, g = 0.58, b = 0.0} -- 200, 149, 0
+data.raw["underground-belt"]["underground-belt"].friendly_map_color = {r = 0.74, g = 0.55, b = 0.0} -- 188, 140, 0
 
-data.raw["transport-belt"]["fast-transport-belt"].friendly_map_color = {r = .98, g = .27, b = .06} -- 250, 69, 15  
-data.raw["splitter"]["fast-splitter"].friendly_map_color = {r = 78, g = .22, b = .05} -- 200, 55, 12
-data.raw["underground-belt"]["fast-underground-belt"].friendly_map_color = {r = .74, g = .20, b = .04} -- 188, 52, 11
+data.raw["transport-belt"]["fast-transport-belt"].friendly_map_color = {r = 0.98, g = 0.27, b = 0.06} -- 250, 69, 15  
+data.raw["splitter"]["fast-splitter"].friendly_map_color = {r = 0.78, g = 0.22, b = 0.05} -- 200, 55, 12
+data.raw["underground-belt"]["fast-underground-belt"].friendly_map_color = {r = 0.74, g = 0.20, b = 0.04} -- 188, 52, 11
 
-data.raw["transport-belt"]["express-transport-belt"].friendly_map_color = {r = .15, g = .67, b = .71} -- 38, 171, 181
-data.raw["splitter"]["express-splitter"].friendly_map_color = {r = .12, g = .54, b = .57} -- 30, 137, 145
-data.raw["underground-belt"]["express-underground-belt"].friendly_map_color = {r = .11, g = .50, b = .53} -- 29, 128, 136
+data.raw["transport-belt"]["express-transport-belt"].friendly_map_color = {r = 0.15, g = 0.67, b = 0.71} -- 38, 171, 181
+data.raw["splitter"]["express-splitter"].friendly_map_color = {r = 0.12, g = 0.54, b = 0.57} -- 30, 137, 145
+data.raw["underground-belt"]["express-underground-belt"].friendly_map_color = {r = 0.11, g = 0.50, b = 0.53} -- 29, 128, 136
 
 --changes color of pipes/storage tank
-data.raw["pipe"]["pipe"].friendly_map_color = {r = .29, g = .09, b = .56} -- 74, 23, 143
-data.raw["pipe-to-ground"]["pipe-to-ground"].friendly_map_color = {r = .29, g = .09, b = .56}
-data.raw["storage-tank"]["storage-tank"].friendly_map_color = {r = .29, g = .09, b = .56}
+data.raw["pipe"]["pipe"].friendly_map_color = {r = 0.29, g = 0.09, b = 0.56} -- 74, 23, 143
+data.raw["pipe-to-ground"]["pipe-to-ground"].friendly_map_color = {r = 0.29, g = 0.09, b = 0.56}
+data.raw["storage-tank"]["storage-tank"].friendly_map_color = {r = 0.29, g = 0.09, b = 0.56}
 
 --Bob's Belts
 if data.raw["transport-belt"]["green-transport-belt"] ~= nil then
-	data.raw["transport-belt"]["green-transport-belt"].friendly_map_color = {r = .07, g = 1.0, b = .62} -- 18, 255, 158
-	data.raw["splitter"]["green-splitter"].friendly_map_color = {r = .06, g = .80, b = .50} -- 14, 205, 126
-	data.raw["underground-belt"]["green-underground-belt"].friendly_map_color = {r = .05, g = .75, b = .46} -- 14, 191, 119
+	data.raw["transport-belt"]["green-transport-belt"].friendly_map_color = {r = 0.07, g = 1.0, b = 0.62} -- 18, 255, 158
+	data.raw["splitter"]["green-splitter"].friendly_map_color = {r = 0.06, g = 0.80, b = 0.50} -- 14, 205, 126
+	data.raw["underground-belt"]["green-underground-belt"].friendly_map_color = {r = 0.05, g = 0.75, b = 0.46} -- 14, 191, 119
 end 
 
 if data.raw["transport-belt"]["purple-transport-belt"] ~= nil then
-	data.raw["transport-belt"]["purple-transport-belt"].friendly_map_color = {r = .97, g = .07, b = 1.0} -- 247, 18, 255
-	data.raw["splitter"]["purple-splitter"].friendly_map_color = {r = .77, g = .06, b = .80} -- 198, 14, 204
-	data.raw["underground-belt"]["purple-underground-belt"].friendly_map_color = {r = .73, g = .05, b = .75} -- 185, 14, 191
+	data.raw["transport-belt"]["purple-transport-belt"].friendly_map_color = {r = 0.97, g = 0.07, b = 1.0} -- 247, 18, 255
+	data.raw["splitter"]["purple-splitter"].friendly_map_color = {r = 0.77, g = 0.06, b = 0.80} -- 198, 14, 204
+	data.raw["underground-belt"]["purple-underground-belt"].friendly_map_color = {r = 0.73, g = 0.05, b = 0.75} -- 185, 14, 191
 end
 
 --5dim belts
 if data.raw["underground-belt"]["5d-mk1-transport-belt-to-ground-30"] then
-	data.raw["underground-belt"]["5d-mk1-transport-belt-to-ground-30"].map_color = {r = .74, g = .55, b = 0.0} -- 188, 140, 0
-	data.raw["underground-belt"]["5d-mk2-transport-belt-to-ground-30"].map_color = {r = .74, g = .20, b = .04} -- 188, 52, 11
-	data.raw["underground-belt"]["5d-mk3-transport-belt-to-ground-30"].map_color = {r = .11, g = .50, b = .53} -- 29, 128, 136
+	data.raw["underground-belt"]["5d-mk1-transport-belt-to-ground-30"].map_color = {r = 0.74, g = 0.55, b = 0.0} -- 188, 140, 0
+	data.raw["underground-belt"]["5d-mk2-transport-belt-to-ground-30"].map_color = {r = 0.74, g = 0.20, b = 0.04} -- 188, 52, 11
+	data.raw["underground-belt"]["5d-mk3-transport-belt-to-ground-30"].map_color = {r = 0.11, g = 0.50, b = 0.53} -- 29, 128, 136
 	
-	data.raw["underground-belt"]["5d-mk1-transport-belt-to-ground-50"].map_color = {r = .74, g = .55, b = 0.0} -- 188, 140, 0
-	data.raw["underground-belt"]["5d-mk2-transport-belt-to-ground-50"].map_color = {r = .74, g = .20, b = .04} -- 188, 52, 11
-	data.raw["underground-belt"]["5d-mk3-transport-belt-to-ground-50"].map_color = {r = .11, g = .50, b = .53} -- 29, 128, 136
+	data.raw["underground-belt"]["5d-mk1-transport-belt-to-ground-50"].map_color = {r = 0.74, g = 0.55, b = 0.0} -- 188, 140, 0
+	data.raw["underground-belt"]["5d-mk2-transport-belt-to-ground-50"].map_color = {r = 0.74, g = 0.20, b = 0.04} -- 188, 52, 11
+	data.raw["underground-belt"]["5d-mk3-transport-belt-to-ground-50"].map_color = {r = 0.11, g = 0.50, b = 0.53} -- 29, 128, 136
 end
 
 if data.raw["transport-belt"]["5d-mk4-transport-belt"] ~= nil then
@@ -92,12 +92,12 @@ end
 
 --changes color of radars
 for _, v in pairs(data.raw["radar"]) do
-	v.friendly_map_color = {r = .49, g = .91, b = .75} -- 124, 232, 192
+	v.friendly_map_color = {r = 0.49, g = 0.91, b = 0.75} -- 124, 232, 192
 end
 
 --changes color of roboports
 for _, v in pairs(data.raw["roboport"]) do
-	v.friendly_map_color = {r = .39, g = .53, b = .51} -- 99, 135, 130
+	v.friendly_map_color = {r = 0.39, g = 0.53, b = 0.51} -- 99, 135, 130
 end
 
 if Color_v15_Items then
@@ -106,23 +106,23 @@ if Color_v15_Items then
 	end
 	
 	for _, v in pairs(data.raw["electric-turret"]) do
-		v.map_color = {r = 1.00, g = .40, b = .39} -- 254, 102, 99
+		v.map_color = {r = 1.00, g = 0.40, b = 0.39} -- 254, 102, 99
 	end
 	
 	for _, v in pairs(data.raw["fluid-turret"]) do
-		v.map_color = {r = .85, g = .34, b = .33} -- 216, 87, 84 
+		v.map_color = {r = 0.85, g = 0.34, b = 0.33} -- 216, 87, 84 
 	end
 	
 	for _, v in pairs(data.raw["ammo-turret"]) do
-		v.map_color = {r = .75, g = .30, b = .29} -- 191, 77, 74 
+		v.map_color = {r = 0.75, g = 0.30, b = 0.29} -- 191, 77, 74 
 	end
 	
 	for _, v in pairs(data.raw["solar-panel"]) do
-		v.map_color = {r = 0.19, g = .19, b = .19} -- 49, 48, 49
+		v.map_color = {r = 0.19, g = 0.19, b = 0.19} -- 49, 48, 49
 	end
 	
 	for _, v in pairs(data.raw["accumulator"]) do
-		v.map_color = {r = 0.61, g = .60, b = .71} -- 156, 154, 181
+		v.map_color = {r = 0.61, g = 0.60, b = 0.71} -- 156, 154, 181
 	end
 end
 
