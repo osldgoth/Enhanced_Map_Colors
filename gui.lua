@@ -10,17 +10,17 @@ function legendDropdown(guiLeft) --clean up required? --add filters? is that pos
 	frame.style.minimal_width = 110
 	frame.style.maximal_width = 130
 	if tech["logistics"].researched then
-		frame.add{type="sprite-button", name="b1", sprite="entity/transport-belt", style="entity_style"}
+		frame.add{type="sprite-button", name="b1", tooltip = "All yellow belts, splitters and underground", sprite="entity/transport-belt", style="entity_style"}
 		frame.add{type="button", name="b1c", style = "map_color_graphic_basic"}
 		frame.style.maximal_height = frame.style.maximal_height + 45
 	end
 	if tech["logistics-2"].researched then
-		frame.add{type="sprite-button", name="b2", sprite="entity/fast-transport-belt", style="entity_style"}
+		frame.add{type="sprite-button", name="b2", tooltip = "All red belts, splitters and underground", sprite="entity/fast-transport-belt", style="entity_style"}
 		frame.add{type="button", name="b2c", style = "map_color_graphic_fast"}
 		frame.style.maximal_height = frame.style.maximal_height + 45
 	end
 	if tech["logistics-3"].researched then
-		frame.add{type="sprite-button", name="b3", sprite="entity/express-transport-belt", style="entity_style"}
+		frame.add{type="sprite-button", name="b3", tooltip = "All blue belts, splitters and underground", sprite="entity/express-transport-belt", style="entity_style"}
 		frame.add{type="button", name="b3c", style = "map_color_graphic_express"}
 		frame.style.maximal_height = frame.style.maximal_height + 45
 	end
@@ -53,24 +53,24 @@ function legendDropdown(guiLeft) --clean up required? --add filters? is that pos
 		end
 		if modName == "boblogistics" then
 			if tech["bob-logistics-4"].researched then
-				frame.add{type="sprite-button", name="bb4", sprite = "entity/green-transport-belt", style="entity_style"}
+				frame.add{type="sprite-button", name="bb4", tooltip = "All Bobs green belts, splitters and underground", sprite = "entity/green-transport-belt", style="entity_style"}
 				frame.add{type="button", name="bb4c", style = "map_color_graphic_bob_logistics_4"}
 				frame.style.maximal_height = frame.style.maximal_height + 45
 			end
 			if tech["bob-logistics-5"].researched then
-				frame.add{type="sprite-button", name="bb5", sprite = "item/purple-transport-belt", style="entity_style"}
+				frame.add{type="sprite-button", name="bb5", tooltip = "All Bobs purple belts, splitters and underground", sprite = "item/purple-transport-belt", style="entity_style"}
 				frame.add{type="button", name="bb5c", style = "map_color_graphic_bob_logistics_5"}
 				frame.style.maximal_height = frame.style.maximal_height + 45
 			end
 		end
 		if modName == "5dim_transport" then
 			if tech["logistics-4"].researched then
-				frame.add{type="sprite-button", name="5db4", sprite = "item/5d-mk4-transport-belt", style="entity_style"}
+				frame.add{type="sprite-button", name="5db4", tooltip = "All 5Dim green belts, splitters and underground", sprite = "item/5d-mk4-transport-belt", style="entity_style"}
 				frame.add{type="button", name="5db4c", style = "map_color_graphic_5dim_transport_4"}
 				frame.style.maximal_height = frame.style.maximal_height + 45
 			end
 			if tech["logistics-5"].researched then
-				frame.add{type="sprite-button", name="5db5", sprite = "item/5d-mk5-transport-belt", style="entity_style"}
+				frame.add{type="sprite-button", name="5db5", tooltip = "All 5Dim white belts, splitters and underground", sprite = "item/5d-mk5-transport-belt", style="entity_style"}
 				frame.add{type="button", name="5db5c", style = "map_color_graphic_5dim_transport_5"}
 				frame.style.maximal_height = frame.style.maximal_height + 45
 			end
@@ -92,8 +92,8 @@ function legendDropdown(guiLeft) --clean up required? --add filters? is that pos
 		if modName == "UraniumPower" then
 			if tech["uranium-processing"].researched then
 				steam = true
-				frame.add{type="sprite-button", name="eam", tooltip = "Uranium Power", sprite="technology/uranium-processing", style="entity_style"}
-				frame.add{type="button", name="eamc", style = "map_color_graphic_steam"}
+				frame.add{type="sprite-button", name="up", tooltip = "Uranium Power", sprite="technology/uranium-processing", style="entity_style"}
+				frame.add{type="button", name="upcc", style = "map_color_graphic_steam"}
 				frame.style.maximal_height = frame.style.maximal_height + 45
 			end
 		end
@@ -106,12 +106,12 @@ function legendDropdown(guiLeft) --clean up required? --add filters? is that pos
 		frame.add{type="button", name="subc", style = "map_color_graphic_medium"}
 		frame.style.maximal_height = frame.style.maximal_height + 45
 	elseif tech["electric-energy-distribution-1"].researched then
-		frame.add{type="sprite-button", name="mp", tooltip = "All Electric Poles", sprite="entity/medium-electric-pole", style="entity_style"}
-		frame.add{type="button", name="mpc", style = "map_color_graphic_medium"}
+		frame.add{type="sprite-button", name="medp", tooltip = "All Electric Poles", sprite="entity/medium-electric-pole", style="entity_style"}
+		frame.add{type="button", name="medpc", style = "map_color_graphic_medium"}
 		frame.style.maximal_height = frame.style.maximal_height + 45
 	else
-		frame.add{type="sprite-button", name="sp", tooltip = "All Electric Poles", sprite="entity/small-electric-pole", style="entity_style"}
-		frame.add{type="button", name="spc", style = "map_color_graphic_medium"}
+		frame.add{type="sprite-button", name="smp", tooltip = "All Electric Poles", sprite="entity/small-electric-pole", style="entity_style"}
+		frame.add{type="button", name="smpc", style = "map_color_graphic_medium"}
 		frame.style.maximal_height = frame.style.maximal_height + 45
 	end
 	if tech["solar-energy"].researched then
