@@ -117,36 +117,11 @@ function legendDropdown(guiLeft) --clean up required? --add filters? is that pos
 	if tech["solar-energy"].researched then
 		frame.add{type="sprite-button", name="pan", tooltip = "Solar Panels", sprite="entity/solar-panel", style= "entity_style"}
 		frame.style.maximal_height = frame.style.maximal_height + 45
-		if Color_v15_Items then
-			frame.add{type="button", name="panc", style = "map_color_graphic_solar"}
-		else
-			frame.add{type="button", name="panc", style = "map_color_graphic_steam"}
-		end
+		frame.add{type="button", name="panc", style = "map_color_graphic_solar"}
 	elseif not steam then
 		frame.add{type="sprite-button", name="eam", tooltip = "Steam Power", sprite="entity/steam-engine", style="entity_style"}
 		frame.add{type="button", name="eamc", style = "map_color_graphic_steam"}
 		frame.style.maximal_height = frame.style.maximal_height + 45
-	end
-	if Color_v15_Items then
-		if tech["electric-energy-accumulators-1"].researched then
-			frame.add{type="sprite-button", name="acc", tooltip = "Accumulators", sprite="entity/accumulator", style="entity_style"}
-			frame.add{type="button", name="accc", style = "map_color_graphic_accum"}
-			frame.style.maximal_height = frame.style.maximal_height + 45
-		end
-		if tech["laser-turrets"].researched then
-			frame.add{type="sprite-button", name="las", tooltip = "Laser Turrets", sprite="technology/laser-turrets", style="entity_style"}
-			frame.add{type="button", name="lasc", style = "map_color_graphic_turrets"}
-			frame.style.maximal_height = frame.style.maximal_height + 45
-		elseif tech["turrets"].researched then
-			frame.add{type="sprite-button", name="gun", tooltip = "Gun Turrets", sprite="technology/turrets", style="entity_style"}
-			frame.add{type="button", name="gunc", style = "map_color_graphic_turrets"}
-			frame.style.maximal_height = frame.style.maximal_height + 45
-		end
-		if tech["stone-walls"].researched then
-			frame.add{type="sprite-button", name="wall", tooltip = "Walls", sprite="technology/stone-walls", style="entity_style"}
-			frame.add{type="button", name="wallc", style = "map_color_graphic_wall"}
-			frame.style.maximal_height = frame.style.maximal_height + 45
-		end
 	end
 	frame.add{type="button", name="close", caption="Close", style="button_style"}
 	frame.style.maximal_height = frame.style.maximal_height + 50

@@ -5,6 +5,12 @@ local function pprint(msg)
 	game.print(tostring(msg))
 end
 
+local function versionStringToNumber(s)
+	local p1 = string.match(s, "%d+%p%d+")
+	local p2 = string.match(s, "%d+", 1 + #p1)
+	local n = tonumber(p1..p2)
+	return n
+end
 
 --[[ --IGNORE THIS CODE
 local function findAllBelts(force)
@@ -114,9 +120,9 @@ script.on_configuration_changed(function(data)
 		if data.mod_changes ~= nil and data.mod_changes["Enhanced_Map_Colors"] ~= nil then
 			if data.mod_changes["Enhanced_Map_Colors"].old_version == nil then -- saved game, no mod
 				rechart("No Enhanced Map Colors previously installed, calling rechart for player ")
-			elseif data.mod_changes.Enhanced_Map_Colors.old_version <= "1.4.00" then --save game, old mod version --last color change pre 0.15.x --should be one version less than current*
+			elseif versionStringToNumber(data.mod_changes.Enhanced_Map_Colors.old_version) <= 1.401 then --save game, old mod version --last color change 0.15.x --should be one version less than current?
 				rechart("Old Enhanced Map Colors version previously installed, calling rechart for player ")
-				if data.mod_changes.Enhanced_Map_Colors.old_version <= "1.3.9" then --save game, old mod version 
+				if versionStringToNumber(data.mod_changes.Enhanced_Map_Colors.old_version) <= 1.39 then --save game, old mod version 
 					destroyOldMainGuiButton() --not really needed
 				end
 			end
