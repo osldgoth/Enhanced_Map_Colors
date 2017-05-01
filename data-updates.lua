@@ -5,7 +5,7 @@ data.raw["transport-belt"]["transport-belt"].friendly_map_color = {r = 0.98, g =
 data.raw["splitter"]["splitter"].friendly_map_color = {r = 0.78, g = 0.58, b = 0.0} -- 200, 149, 0
 data.raw["underground-belt"]["underground-belt"].friendly_map_color = {r = 0.74, g = 0.55, b = 0.0} -- 188, 140, 0
 
-data.raw["transport-belt"]["fast-transport-belt"].friendly_map_color = {r = 0.98, g = 0.27, b = 0.06} -- 250, 69, 15  
+data.raw["transport-belt"]["fast-transport-belt"].friendly_map_color = {r = 0.98, g = 0.27, b = 0.06} -- 250, 69, 15
 data.raw["splitter"]["fast-splitter"].friendly_map_color = {r = 0.78, g = 0.22, b = 0.05} -- 200, 55, 12
 data.raw["underground-belt"]["fast-underground-belt"].friendly_map_color = {r = 0.74, g = 0.20, b = 0.04} -- 188, 52, 11
 
@@ -61,6 +61,7 @@ if data.raw["transport-belt"]["5d-mk5-transport-belt"] ~= nil then
 end
 
 --[[ Dropping 'support', will delete in a future update
+
 --DyTech belts
 if data.raw["transport-belt"]["super-transport-belt"] ~= nil then
 	data.raw["transport-belt"]["super-transport-belt"].friendly_map_color = {r = 0.81, g = 0.21, b = 0.80} -- 207, 54, 204
@@ -77,17 +78,12 @@ end
 
 --Electric Poles including those in Bob's mods and 5dim
 for _, v in pairs(data.raw["electric-pole"]) do
-	v.map_color = {r = 0.65, g = 0.65, b = 0.65, a = 1} -- 166, 166, 166
-end
-
---Solar including Bob's Solar and 5dim
-for _, v in pairs(data.raw["solar-panel"]) do
-	v.map_color = {r = 0.0, g = 0.35, b = 0.15, a = 1} -- 0, 89, 38
+	v.map_color = {r = 0.65, g = 0.65, b = 0.65} -- 166, 166, 166
 end
 
 --Steam steam including Bob's Steam and 5dim
 for _, v in pairs(data.raw["generator"]) do
-	v.map_color = {r = 0.0, g = 0.35, b = 0.15, a = 1} -- 0, 89, 38
+	v.map_color = {r = 0.0, g = 0.35, b = 0.15} -- 0, 89, 38
 end
 
 --changes color of radars
@@ -100,31 +96,6 @@ for _, v in pairs(data.raw["roboport"]) do
 	v.friendly_map_color = {r = 0.39, g = 0.53, b = 0.51} -- 99, 135, 130
 end
 
-if Color_v15_Items then
-	for _, v in pairs(data.raw["wall"]) do
-		v.map_color = {r = 1.00, g = 1.00, b = 1.00} -- 255, 255 , 255 --Same as robots
-	end
-	
-	for _, v in pairs(data.raw["electric-turret"]) do
-		v.map_color = {r = 1.00, g = 0.40, b = 0.39} -- 254, 102, 99
-	end
-	
-	for _, v in pairs(data.raw["fluid-turret"]) do
-		v.map_color = {r = 0.85, g = 0.34, b = 0.33} -- 216, 87, 84 
-	end
-	
-	for _, v in pairs(data.raw["ammo-turret"]) do
-		v.map_color = {r = 0.75, g = 0.30, b = 0.29} -- 191, 77, 74 
-	end
-	
-	for _, v in pairs(data.raw["solar-panel"]) do
-		v.map_color = {r = 0.19, g = 0.19, b = 0.19} -- 49, 48, 49
-	end
-	
-	for _, v in pairs(data.raw["accumulator"]) do
-		v.map_color = {r = 0.61, g = 0.60, b = 0.71} -- 156, 154, 181
-	end
-end
 
 
 --[[ possible future changes?
