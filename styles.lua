@@ -37,9 +37,15 @@ local function color_graphics1(posX, posY)
   }
 end
 
+default_style.EMC_table_style = {
+	horizontal_spacing = 15,
+	type = "table_style",
+	vertical_spacing = 5
+}
+
 default_style.entity_style = {
   type = "button_style",
-  parent = "button_style",
+  parent = "button",
   scalable = true,
   default_font_color={r=0, g=0, b=0},
   width = 38,
@@ -76,7 +82,7 @@ default_style.entity_style = {
 
 default_style.map_color_graphic_basic = {
   type = "button_style",
-  parent = "slot_button_style",
+  parent = "slot_button",
 
 	scalable = true,
 
@@ -95,7 +101,7 @@ default_style.map_color_graphic_basic = {
 
 default_style.map_color_graphic_fast = {
   type = "button_style",
-  parent = "slot_button_style",
+  parent = "slot_button",
 
 	scalable = true,
 
@@ -114,7 +120,7 @@ default_style.map_color_graphic_fast = {
 
 default_style.map_color_graphic_express = {
   type = "button_style",
-  parent = "slot_button_style",
+  parent = "slot_button",
 
   scalable = true,
 
@@ -133,7 +139,7 @@ default_style.map_color_graphic_express = {
 
 default_style.map_color_graphic_ptg = {
   type = "button_style",
-  parent = "slot_button_style",
+  parent = "slot_button",
 
   scalable = true,
 
@@ -152,7 +158,7 @@ default_style.map_color_graphic_ptg = {
 
 default_style.map_color_graphic_medium = {
   type = "button_style",
-  parent = "slot_button_style",
+  parent = "slot_button",
 
   scalable = true,
 
@@ -171,7 +177,7 @@ default_style.map_color_graphic_medium = {
 
 default_style.map_color_graphic_steam = {
   type = "button_style",
-  parent = "slot_button_style",
+  parent = "slot_button",
 
   scalable = true,
 
@@ -190,7 +196,7 @@ default_style.map_color_graphic_steam = {
 
 default_style.map_color_graphic_port = {
   type = "button_style",
-  parent = "slot_button_style",
+  parent = "slot_button",
 
   scalable = true,
 
@@ -209,7 +215,7 @@ default_style.map_color_graphic_port = {
 
 default_style.map_color_graphic_radar = {
   type = "button_style",
-  parent = "slot_button_style",
+  parent = "slot_button",
 
   scalable = true,
 
@@ -228,7 +234,7 @@ default_style.map_color_graphic_radar = {
 
 default_style.map_color_graphic_solar = {
   type = "button_style",
-  parent = "slot_button_style",
+  parent = "slot_button",
 
   scalable = true,
 
@@ -247,7 +253,7 @@ default_style.map_color_graphic_solar = {
 
 default_style.map_color_graphic_bob_logistics_4 = {
   type = "button_style",
-  parent = "slot_button_style",
+  parent = "slot_button",
 
   scalable = true,
 
@@ -266,7 +272,7 @@ default_style.map_color_graphic_bob_logistics_4 = {
 
 default_style.map_color_graphic_bob_logistics_5 = {
   type = "button_style",
-  parent = "slot_button_style",
+  parent = "slot_button",
 
   scalable = true,
 
@@ -285,7 +291,7 @@ default_style.map_color_graphic_bob_logistics_5 = {
 
 default_style.map_color_graphic_5dim_transport_4 = {
   type = "button_style",
-  parent = "slot_button_style",
+  parent = "slot_button",
 
   scalable = true,
 
@@ -304,7 +310,7 @@ default_style.map_color_graphic_5dim_transport_4 = {
 	
 default_style.map_color_graphic_5dim_transport_5 = {
   type = "button_style",
-  parent = "slot_button_style",
+  parent = "slot_button",
 
   scalable = true,
 
@@ -320,49 +326,10 @@ default_style.map_color_graphic_5dim_transport_5 = {
   hovered_graphical_set = color_graphics(13, 27),
   clicked_graphical_set = color_graphics(13, 27)
 }
---[[ will delete in future update
-default_style.map_color_graphic_DyTech_super_4 = {
-  type = "button_style",
-  parent = "slot_button_style",
-
-  scalable = true,
-
-  top_padding = 1,
-  right_padding = 1,
-  bottom_padding = 1,
-  left_padding = 1,
-
-  width = 48,
-  width = 38,
-
-  default_graphical_set = color_graphics(13, 36),
-  hovered_graphical_set = color_graphics(13, 36),
-  clicked_graphical_set = color_graphics(13, 36)
-}
-
-default_style.map_color_graphic_DyTech_extreme_5 = {
-  type = "button_style",
-  parent = "slot_button_style",
-
-  scalable = true,
-
-  top_padding = 1,
-  right_padding = 1,
-  bottom_padding = 1,
-  left_padding = 1,
-
-  width = 48,
-  width = 38,
-
-  default_graphical_set = color_graphics(13, 45),
-  hovered_graphical_set = color_graphics(13, 45),
-  clicked_graphical_set = color_graphics(13, 45)
-}--]]
 
 default_style.visible_bots_construction = {
-
   type = "button_style",
-  parent = "slot_button_style",
+  parent = "slot_button",
 
   scalable = true,
 
@@ -380,9 +347,8 @@ default_style.visible_bots_construction = {
 }
 
 default_style.visible_bots_logistic = {
-
   type = "button_style",
-  parent = "slot_button_style",
+  parent = "slot_button",
 
   scalable = true,
 
@@ -402,7 +368,7 @@ default_style.visible_bots_logistic = {
 default_style.map_color_graphic_accum = {
 
   type = "button_style",
-  parent = "slot_button_style",
+  parent = "slot_button",
 
   scalable = true,
 
@@ -422,7 +388,7 @@ default_style.map_color_graphic_accum = {
 default_style.map_color_graphic_wall = {
 
   type = "button_style",
-  parent = "slot_button_style",
+  parent = "slot_button",
 
   scalable = true,
 
@@ -442,7 +408,7 @@ default_style.map_color_graphic_wall = {
 default_style.map_color_graphic_turrets = {
 
   type = "button_style",
-  parent = "slot_button_style",
+  parent = "slot_button",
 
   scalable = true,
 

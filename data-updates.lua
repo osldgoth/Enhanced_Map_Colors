@@ -18,6 +18,8 @@ data.raw["pipe"]["pipe"].friendly_map_color = {r = 0.29, g = 0.09, b = 0.56} -- 
 data.raw["pipe-to-ground"]["pipe-to-ground"].friendly_map_color = {r = 0.29, g = 0.09, b = 0.56}
 data.raw["storage-tank"]["storage-tank"].friendly_map_color = {r = 0.29, g = 0.09, b = 0.56}
 
+--data.raw["mining-drill"]["burner-mining-drill"].map_color = {r = 0.0, g = 0.37, b = 0.08} -- 0, 95, 20
+--data.raw["mining-drill"]["electric-mining-drill"].map_color = {r = 0.0, g = 0.37, b = 0.08} -- 74, 23, 143
 --Bob's Belts
 if data.raw["transport-belt"]["green-transport-belt"] ~= nil then
 	data.raw["transport-belt"]["green-transport-belt"].friendly_map_color = {r = 0.07, g = 1.0, b = 0.62} -- 18, 255, 158
@@ -59,6 +61,18 @@ if data.raw["transport-belt"]["5d-mk5-transport-belt"] ~= nil then
 	data.raw["underground-belt"]["5d-mk5-transport-belt-to-ground-30"].map_color = {r = 0.67, g = 0.68, b = 0.72} -- 170, 174, 184
 	data.raw["underground-belt"]["5d-mk5-transport-belt-to-ground-50"].map_color = {r = 0.67, g = 0.68, b = 0.72} -- 170, 174, 184
 end
+
+--[[
+--Better Belts mods
+if data.raw["transport-belt"][""] ~= nil then
+	data.raw["transport-belt"][""].map_color = {r = 0.14, g = 0.94, b = 0.05} --36, 240, 13
+	data.raw["transport-belt"][""].map_color
+	data.raw["transport-belt"][""].map_color
+	data.raw["transport-belt"][""].map_color
+	data.raw["transport-belt"][""].map_color
+	
+end
+--]]
 
 --[[ Dropping 'support', will delete in a future update
 
