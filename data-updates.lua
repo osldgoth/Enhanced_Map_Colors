@@ -21,16 +21,16 @@ data.raw["storage-tank"]["storage-tank"].friendly_map_color = {r = 0.29, g = 0.0
 --data.raw["mining-drill"]["burner-mining-drill"].map_color = {r = 0.0, g = 0.37, b = 0.08} -- 0, 95, 20
 --data.raw["mining-drill"]["electric-mining-drill"].map_color = {r = 0.0, g = 0.37, b = 0.08} -- 74, 23, 143
 --Bob's Belts
-if data.raw["transport-belt"]["green-transport-belt"] ~= nil then
-	data.raw["transport-belt"]["green-transport-belt"].friendly_map_color = {r = 0.07, g = 1.0, b = 0.62} -- 18, 255, 158
-	data.raw["splitter"]["green-splitter"].friendly_map_color = {r = 0.06, g = 0.80, b = 0.50} -- 14, 205, 126
-	data.raw["underground-belt"]["green-underground-belt"].friendly_map_color = {r = 0.05, g = 0.75, b = 0.46} -- 14, 191, 119
-end 
+if data.raw["transport-belt"]["ultimate-transport-belt"] ~= nil then --green
+	data.raw["transport-belt"]["ultimate-transport-belt"].friendly_map_color = {r = 0.07, g = 1.0, b = 0.62} -- 18, 255, 158
+	data.raw["splitter"]["ultimate-splitter"].friendly_map_color = {r = 0.06, g = 0.80, b = 0.50} -- 14, 205, 126
+	data.raw["underground-belt"]["ultimate-underground-belt"].friendly_map_color = {r = 0.05, g = 0.75, b = 0.46} -- 14, 191, 119
+end
 
-if data.raw["transport-belt"]["purple-transport-belt"] ~= nil then
-	data.raw["transport-belt"]["purple-transport-belt"].friendly_map_color = {r = 0.97, g = 0.07, b = 1.0} -- 247, 18, 255
-	data.raw["splitter"]["purple-splitter"].friendly_map_color = {r = 0.77, g = 0.06, b = 0.80} -- 198, 14, 204
-	data.raw["underground-belt"]["purple-underground-belt"].friendly_map_color = {r = 0.73, g = 0.05, b = 0.75} -- 185, 14, 191
+if data.raw["transport-belt"]["turbo-transport-belt"] ~= nil then --purple
+	data.raw["transport-belt"]["turbo-transport-belt"].friendly_map_color = {r = 0.97, g = 0.07, b = 1.0} -- 247, 18, 255
+	data.raw["splitter"]["turbo-splitter"].friendly_map_color = {r = 0.77, g = 0.06, b = 0.80} -- 198, 14, 204
+	data.raw["underground-belt"]["turbo-underground-belt"].friendly_map_color = {r = 0.73, g = 0.05, b = 0.75} -- 185, 14, 191
 end
 
 --5dim belts

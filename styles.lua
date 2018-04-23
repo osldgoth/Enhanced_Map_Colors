@@ -265,9 +265,9 @@ default_style.map_color_graphic_bob_logistics_4 = {
   width = 48,
   width = 38,
 
-  default_graphical_set = color_graphics(13, 0),
-  hovered_graphical_set = color_graphics(13, 0),
-  clicked_graphical_set = color_graphics(13, 0)
+  default_graphical_set = color_graphics(13, 9),
+  hovered_graphical_set = color_graphics(13, 9),
+  clicked_graphical_set = color_graphics(13, 9)
 }
 
 default_style.map_color_graphic_bob_logistics_5 = {
@@ -284,9 +284,9 @@ default_style.map_color_graphic_bob_logistics_5 = {
   width = 48,
   width = 38,
 
-  default_graphical_set = color_graphics(13, 9),
-  hovered_graphical_set = color_graphics(13, 9),
-  clicked_graphical_set = color_graphics(13, 9)
+  default_graphical_set = color_graphics(13, 0),
+  hovered_graphical_set = color_graphics(13, 0),
+  clicked_graphical_set = color_graphics(13, 0)
 }
 
 default_style.map_color_graphic_5dim_transport_4 = {
