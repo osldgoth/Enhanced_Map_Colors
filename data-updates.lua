@@ -1,5 +1,3 @@
-require "config"
-
 -- changes color of base belts
 data.raw["transport-belt"]["transport-belt"].friendly_map_color = {r = 0.98, g = 0.73, b = 0.0} -- 250, 186, 0
 data.raw["splitter"]["splitter"].friendly_map_color = {r = 0.78, g = 0.58, b = 0.0} -- 200, 149, 0
