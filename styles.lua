@@ -2,38 +2,38 @@ local default_style = data.raw["gui-style"].default
 
 local function color_graphics(posX, posY)
   return {
-    type = "monolith",
-		top_monolith_border = 2,
-    right_monolith_border = 0,
-    bottom_monolith_border = 0,
-    left_monolith_border = 0,
+    -- type = "monolith",
+		-- top_monolith_border = 2,
+    -- right_monolith_border = 0,
+    -- bottom_monolith_border = 0,
+    -- left_monolith_border = 0,
 
-    monolith_image = {
+    -- monolith_image = {
       filename = "__Enhanced_Map_Colors__/graphics/colors.png",
       priority = "extra-high-no-scale",
       width = 12,
       height = 8,
       x = posX,
       y = posY,
-    },
+    --},
   }
 end
 local function color_graphics1(posX, posY)
   return {
-    type = "monolith",
-		top_monolith_border = 2,
-    right_monolith_border = 0,
-    bottom_monolith_border = 0,
-    left_monolith_border = 0,
+    -- type = "monolith",
+		-- top_monolith_border = 2,
+    -- right_monolith_border = 0,
+    -- bottom_monolith_border = 0,
+    -- left_monolith_border = 0,
 
-    monolith_image = {
+    -- monolith_image = {
       filename = "__Enhanced_Map_Colors__/graphics/colors1.png",
       priority = "extra-high-no-scale",
       width = 12,
       height = 8,
       x = posX,
       y = posY,
-    },
+    -- },
   }
 end
 
