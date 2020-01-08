@@ -12,12 +12,36 @@ data.raw["splitter"]["express-splitter"].friendly_map_color = {r = 0.12, g = 0.5
 data.raw["underground-belt"]["express-underground-belt"].friendly_map_color = {r = 0.11, g = 0.50, b = 0.53} -- 29, 128, 136
 
 --changes color of pipes/storage tank
-data.raw["pipe"]["pipe"].friendly_map_color = {r = 0.29, g = 0.09, b = 0.56} -- 74, 23, 143
-data.raw["pipe-to-ground"]["pipe-to-ground"].friendly_map_color = {r = 0.29, g = 0.09, b = 0.56}
-data.raw["storage-tank"]["storage-tank"].friendly_map_color = {r = 0.29, g = 0.09, b = 0.56}
+-- data.raw["pipe"]["pipe"].friendly_map_color = {r = 0.29, g = 0.09, b = 0.56} -- 74, 23, 143
+-- data.raw["pipe-to-ground"]["pipe-to-ground"].friendly_map_color = {r = 0.29, g = 0.09, b = 0.56}
+-- data.raw["storage-tank"]["storage-tank"].friendly_map_color = {r = 0.29, g = 0.09, b = 0.56}
 
-data.raw["heat-pipe"]["heat-pipe"].friendly_map_color = {r = 0.56, g = 0.0, b = 0.0} -- 142, 0, 0
-data.raw["reactor"]["nuclear-reactor"].friendly_map_color = {r = 0.16, g = 0.73, b = 0.15} -- 41, 186, 37
+-- data.raw["heat-pipe"]["heat-pipe"].friendly_map_color = {r = 0.56, g = 0.0, b = 0.0} -- 142, 0, 0
+-- data.raw["reactor"]["nuclear-reactor"].friendly_map_color = {r = 0.16, g = 0.73, b = 0.15} -- 41, 186, 37
+
+for _, v in pairs(data.raw["pipe"]) do
+v.friendly_map_color = {r = 0.35, g = 0.15, b = 0.62} -- 74, 23, 143
+end
+
+for _, v in pairs(data.raw["pipe-to-ground"]) do
+v.friendly_map_color = {r = 0.35, g = 0.15, b = 0.62} -- 74, 23, 143
+end
+
+for _, v in pairs(data.raw["pump"]) do
+v.friendly_map_color = {r = 0.20, g = 0.05, b = 0.40}
+end
+
+for _, v in pairs(data.raw["storage-tank"]) do
+v.friendly_map_color = {r = 0.22, g = 0.07, b = 0.45}
+end
+
+for _, v in pairs(data.raw["heat-pipe"]) do
+v.friendly_map_color = {r = 0.56, g = 0.0, b = 0.0} -- 142, 0, 0
+end
+
+for _, v in pairs(data.raw["reactor"]) do
+v.friendly_map_color = {r = 0.16, g = 0.73, b = 0.15} -- 41, 186, 37
+end
 
 --data.raw["mining-drill"]["burner-mining-drill"].map_color = {r = 0.0, g = 0.37, b = 0.08} -- 0, 95, 20
 --data.raw["mining-drill"]["electric-mining-drill"].map_color = {r = 0.0, g = 0.37, b = 0.08} -- 74, 23, 143

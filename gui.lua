@@ -18,21 +18,21 @@ function legendDropdown(guiLeft)
 	local tech = game.forces.player.technologies
 	guiLeft.add{type="frame", name="EMC_frame", caption="Entity: Color", direction="vertical", style="frame"}.add{type="table", name="EMC_table", column_count=2, style="EMC_table_style"}
 	local table = guiLeft.EMC_frame.EMC_table
-	if tech["logistics"].researched then --entity is data.raw and item is data.raw.item
+	if tech["logistics"] and tech["logistics"].researched then --entity is data.raw and item is data.raw.item
 		addRow(table,
 					"belt1",
 					"All yellow belts, splitters and underground",
 					spriteCheck(guiLeft,"entity/transport-belt"),
 					"map_color_graphic_basic")
 	end
-	if tech["logistics-2"].researched then
+	if tech["logistics-2"] and tech["logistics-2"].researched then
 		addRow(table,
 					"belt2",
 					"All red belts, splitters and underground",
 					spriteCheck(guiLeft,"entity/fast-transport-belt"),
 					"map_color_graphic_fast")
 	end
-	if tech["logistics-3"].researched then
+	if tech["logistics-3"] and tech["logistics-3"].researched then
 		addRow(table,
 					"belt3",
 					"All blue belts, splitters and underground",
@@ -41,14 +41,14 @@ function legendDropdown(guiLeft)
 	end
 	for modName,_ in pairs(game.active_mods) do
 		if modName == "Visible_Bots" then
-			if tech["construction-robotics"].researched then
+			if tech["construction-robotics"] and tech["construction-robotics"].researched then
 				addRow(table,
 					"construction robot",
 					"construction robot",
 					spriteCheck(guiLeft,"entity/construction-robot"),
 					"visible_bots_construction")
 			end
-			if tech["logistic-robotics"].researched then
+			if tech["logistic-robotics"] and tech["logistic-robotics"].researched then
 				addRow(table,
 					"logistic robot",
 					"logistic robot",
@@ -57,14 +57,14 @@ function legendDropdown(guiLeft)
 			end
 		end
 		if modName == "boblogistics" then
-			if tech["bob-logistics-4"].researched then
+			if tech["logistics-4"] and tech["logistics-4"].researched then -------conflict between bobs and 5dim?
 				addRow(table,
 					"belt4",
 					"All Bobs purple belts, splitters and underground",
 					spriteCheck(guiLeft,"item/turbo-transport-belt"),
 					"map_color_graphic_bob_logistics_4")
 			end
-			if tech["bob-logistics-5"].researched then
+			if tech["logistics-5"] and tech["logistics-5"].researched then
 				addRow(table,
 					"belt5",
 					"All Bobs green belts, splitters and underground",
@@ -73,14 +73,14 @@ function legendDropdown(guiLeft)
 			end
 		end
 		if modName == "5dim_transport" then
-			if tech["logistics-4"].researched then
+			if tech["logistics-4"] and tech["logistics-4"].researched then
 				addRow(table,
 					"5dbelt4",
 					"All 5Dim green belts, splitters and underground",
 					spriteCheck(guiLeft,"item/5d-mk4-transport-belt"),
 					"map_color_graphic_5dim_transport_4")
 			end
-			if tech["logistics-5"].researched then
+			if tech["logistics-5"] and tech["logistics-5"].researched then
 				addRow(table,
 							"5dbelt5",
 							"All 5Dim white belts, splitters and underground",
@@ -89,7 +89,7 @@ function legendDropdown(guiLeft)
 			end
 		end
 		if modName == "UraniumPower" then
-			if tech["uranium-processing"].researched then
+			if tech["uranium-processing"] and tech["uranium-processing"].researched then
 				addRow(table,
 							"Uranium Power",
 							"Uranium Power",
@@ -99,7 +99,7 @@ function legendDropdown(guiLeft)
 			end
 		end
 	end
-	if tech["fluid-handling"].researched then
+	if tech["fluid-handling"] and tech["fluid-handling"].researched then
 		addRow(table,
 					"tank",
 					"All pipes, pipe to ground, and storage tanks",
@@ -112,7 +112,7 @@ function legendDropdown(guiLeft)
 					spriteCheck(guiLeft,"entity/pipe"),
 					"map_color_graphic_ptg")
 	end
-	if tech["logistic-robotics"].researched or tech["construction-robotics"].researched then
+	if tech["logistic-robotics"] and tech["logistic-robotics"].researched or tech["construction-robotics"] and tech["construction-robotics"].researched then
 			addRow(table,
 					"Roboports",
 					"Roboports",
@@ -124,13 +124,13 @@ function legendDropdown(guiLeft)
 					"Radar",
 					spriteCheck(guiLeft,"entity/radar"),
 					"map_color_graphic_radar")
-	if tech["electric-energy-distribution-2"].researched then
+	if tech["electric-energy-distribution-2"] and tech["electric-energy-distribution-2"].researched then
 		addRow(table,
 					"substation",
 					"All Electric Poles",
 					spriteCheck(guiLeft,"entity/substation"),
 					"map_color_graphic_medium")
-	elseif tech["electric-energy-distribution-1"].researched then
+	elseif tech["electric-energy-distribution-1"] and tech["electric-energy-distribution-1"].researched then
 		addRow(table,
 					"poles",
 					"All Electric Poles",
@@ -143,7 +143,7 @@ function legendDropdown(guiLeft)
 					spriteCheck(guiLeft,"entity/small-electric-pole"),
 					"map_color_graphic_medium")
 	end
-	if tech["solar-energy"].researched then
+	if tech["solar-energy"] and tech["solar-energy"].researched then
 		addRow(table,
 					"solar",
 					"Solar Panels",
