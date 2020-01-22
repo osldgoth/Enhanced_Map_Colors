@@ -1,14 +1,19 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.5.1
+Date: 01/21/2020
+  Changes:
+    - Game Version 0.18.x Update.
+---------------------------------------------------------------------------------------------------
 Version: 1.5.0
 Date: 01/05/2020
   Changes:
-    - Added colors for all modded pipes, pumps, storage tanks, heatpipes and reactors
-    - Brought changelog upto standard format
+    - Added colors for all modded pipes, pumps, storage tanks, heatpipes and reactors.
+    - Brought changelog upto standard format.
 ---------------------------------------------------------------------------------------------------
 Version: 1.4.9
 Date: 
   Bugfixes:
-    - Fixed crash due to bobs technology rename
+    - Fixed crash due to bobs technology rename.
 ---------------------------------------------------------------------------------------------------
 Version: 1.4.8
 Date: 
