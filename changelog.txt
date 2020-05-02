@@ -1,4 +1,15 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.5.3
+Date: 04/30/2020
+  Changes:
+    - Custom script using "none" instead of "script-only"
+    - Updated on_configuration_changed function
+---------------------------------------------------------------------------------------------------
+Version: 1.5.2
+Date: 02/07/2020
+  Major Features:
+    - Added startup settings to switch between mod and game colors (breaks multi-player)
+---------------------------------------------------------------------------------------------------
 Version: 1.5.1
 Date: 01/21/2020
   Changes:

@@ -19,28 +19,40 @@ data.raw["underground-belt"]["express-underground-belt"].friendly_map_color = {r
 -- data.raw["heat-pipe"]["heat-pipe"].friendly_map_color = {r = 0.56, g = 0.0, b = 0.0} -- 142, 0, 0
 -- data.raw["reactor"]["nuclear-reactor"].friendly_map_color = {r = 0.16, g = 0.73, b = 0.15} -- 41, 186, 37
 
-for _, v in pairs(data.raw["pipe"]) do
-v.friendly_map_color = {r = 0.35, g = 0.15, b = 0.62} -- 74, 23, 143
+--log("EMC mod settings test: "..tostring(settings.startup["Use-Mod-Color-for-pipes"].value))
+
+if settings.startup["Use-Mod-Color-for-pipes"].value then
+	for _, v in pairs(data.raw["pipe"]) do
+		v.friendly_map_color = {r = 0.35, g = 0.15, b = 0.62} -- 89, 38, 158
+	end
 end
 
-for _, v in pairs(data.raw["pipe-to-ground"]) do
-v.friendly_map_color = {r = 0.35, g = 0.15, b = 0.62} -- 74, 23, 143
+if settings.startup["Use-Mod-Color-for-pipes"].value then
+	for _, v in pairs(data.raw["pipe-to-ground"]) do
+		v.friendly_map_color = {r = 0.35, g = 0.15, b = 0.62} -- 89, 38, 158
+	end
 end
 
-for _, v in pairs(data.raw["pump"]) do
-v.friendly_map_color = {r = 0.20, g = 0.05, b = 0.40}
+if settings.startup["Use-Mod-Color-for-pipes"].value then
+	for _, v in pairs(data.raw["pump"]) do
+		v.friendly_map_color = {r = 0.20, g = 0.05, b = 0.40} -- 51, 13, 102
+	end
 end
 
-for _, v in pairs(data.raw["storage-tank"]) do
-v.friendly_map_color = {r = 0.22, g = 0.07, b = 0.45}
+if settings.startup["Use-Mod-Color-for-pipes"].value then
+	for _, v in pairs(data.raw["storage-tank"]) do
+		v.friendly_map_color = {r = 0.22, g = 0.07, b = 0.45} -- 56, 18, 115
+	end
 end
 
-for _, v in pairs(data.raw["heat-pipe"]) do
-v.friendly_map_color = {r = 0.56, g = 0.0, b = 0.0} -- 142, 0, 0
+if settings.startup["Use-Mod-Color-for-heat-pipes"].value then
+	for _, v in pairs(data.raw["heat-pipe"]) do
+		v.friendly_map_color = {r = 0.56, g = 0.0, b = 0.0} -- 142, 0, 0
+	end
 end
 
 for _, v in pairs(data.raw["reactor"]) do
-v.friendly_map_color = {r = 0.16, g = 0.73, b = 0.15} -- 41, 186, 37
+	v.friendly_map_color = {r = 0.16, g = 0.73, b = 0.15} -- 41, 186, 37
 end
 
 --data.raw["mining-drill"]["burner-mining-drill"].map_color = {r = 0.0, g = 0.37, b = 0.08} -- 0, 95, 20
@@ -99,30 +111,22 @@ if data.raw["transport-belt"][""] ~= nil then
 end
 --]]
 
---[[ Dropping 'support', will delete in a future update
-
---DyTech belts
-if data.raw["transport-belt"]["super-transport-belt"] ~= nil then
-	data.raw["transport-belt"]["super-transport-belt"].friendly_map_color = {r = 0.81, g = 0.21, b = 0.80} -- 207, 54, 204
-	data.raw["splitter"]["super-splitter"].friendly_map_color = {r = 0.64, g = 0.17, b = 0.64} -- 166, 43, 163
-	data.raw["underground-belt"]["super-transport-belt-to-ground"].friendly_map_color = {r = 0.61, g = 0.16, b = 0.60} -- 155, 41, 153
-end
-
-if data.raw["transport-belt"]["extreme-transport-belt"] ~= nil then
-	data.raw["transport-belt"]["extreme-transport-belt"].friendly_map_color = {r = 0.24, g = 0.83, b = 0.24} -- 61, 212, 61
-	data.raw["splitter"]["extreme-splitter"].friendly_map_color = {r = 0.19, g = 0.67, b = 0.19} -- 49, 170, 49
-	data.raw["underground-belt"]["extreme-transport-belt-to-ground"].friendly_map_color = {r = 0.18, g = 0.62, b = 0.18} -- 46, 159, 46
-end
---]]
-
 --Electric Poles including those in Bob's mods and 5dim
 for _, v in pairs(data.raw["electric-pole"]) do
 	v.friendly_map_color = {r = 0.65, g = 0.65, b = 0.65} -- 166, 166, 166
 end
 
---Steam steam including Bob's Steam and 5dim
-for _, v in pairs(data.raw["generator"]) do
-	v.friendly_map_color = {r = 0.0, g = 0.35, b = 0.15} -- 0, 89, 38
+--Steam including Bob's Steam and 5dim
+for k, v in pairs(data.raw["generator"]) do
+	if v.name:find("steam%-engine") or v.name:find("steam%-turbine") then
+		if settings.startup["Use-Mod-Color-for-steam-generators"].value then
+			v.friendly_map_color = {r = 0.0, g = 0.35, b = 0.15} -- 0, 89, 38
+		else
+			return
+		end
+	else
+		v.friendly_map_color = {r = 0.0, g = 0.35, b = 0.15} -- 0, 89, 38
+	end
 end
 
 --changes color of radars
@@ -131,11 +135,33 @@ for _, v in pairs(data.raw["radar"]) do
 end
 
 --changes color of roboports
-for _, v in pairs(data.raw["roboport"]) do
-	v.friendly_map_color = {r = 0.39, g = 0.53, b = 0.51} -- 99, 135, 130
+if settings.startup["Use-Mod-Color-for-roboports"].value then
+	for _, v in pairs(data.raw["roboport"]) do
+		v.friendly_map_color = {r = 0.39, g = 0.53, b = 0.51} -- 99, 135, 130
+	end
 end
 
+-- local n = 1
 
+
+data.raw["unit-spawner"]["biter-spawner"].enemy_map_color = {r = 1.0, g = 0.10, b = 0.10} -- 255, 25, 25
+--biters
+
+data.raw["unit-spawner"]["spitter-spawner"].enemy_map_color = {r = 0.76, g = 0.10, b = 0.16} -- 195, 25, 40
+--spitters
+
+for k,v in pairs(data.raw["unit"]) do
+log("k is "..k)
+	if k:find("biter") then
+			v.enemy_map_color = {r = 1.0, g = 0.33, b = 0.22} -- 255, 85, 55
+	elseif k:find("spitter") then
+			v.enemy_map_color = {r = 0.76, g = 0.22, b = 0.16} -- 195, 55, 40
+	end
+end
+
+for _,v in pairs(data.raw["turret"]) do
+	v.enemy_map_color = {r = 0.53, g = 0.10, b = 0.16} -- 135, 25, 40
+end
 
 --[[ possible future changes?
 --fluid colors -or use game.fluid_prototypes["lubricant"].base_color.r?

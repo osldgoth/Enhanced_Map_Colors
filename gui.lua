@@ -99,25 +99,29 @@ function legendDropdown(guiLeft)
 			end
 		end
 	end
-	if tech["fluid-handling"] and tech["fluid-handling"].researched then
-		addRow(table,
-					"tank",
-					"All pipes, pipe to ground, and storage tanks",
-					spriteCheck(guiLeft,"entity/storage-tank"),
-					"map_color_graphic_ptg")
-	else
-		addRow(table,
-					"pipe",
-					"All pipes, pipe to ground, and storage tanks",
-					spriteCheck(guiLeft,"entity/pipe"),
-					"map_color_graphic_ptg")
+	if settings.startup["Use-Mod-Color-for-pipes"].value then
+		if tech["fluid-handling"] and tech["fluid-handling"].researched then
+			addRow(table,
+						"tank",
+						"All pipes, pipe to ground, and storage tanks",
+						spriteCheck(guiLeft,"entity/storage-tank"),
+						"map_color_graphic_ptg")
+		else
+			addRow(table,
+						"pipe",
+						"All pipes, pipe to ground, and storage tanks",
+						spriteCheck(guiLeft,"entity/pipe"),
+						"map_color_graphic_ptg")
+		end
 	end
 	if tech["logistic-robotics"] and tech["logistic-robotics"].researched or tech["construction-robotics"] and tech["construction-robotics"].researched then
+		if settings.startup["Use-Mod-Color-for-roboports"].value then
 			addRow(table,
 					"Roboports",
 					"Roboports",
 					spriteCheck(guiLeft,"entity/roboport"),
 					"map_color_graphic_port")
+		end
 	end
 		addRow(table,
 					"Radar",
@@ -150,11 +154,13 @@ function legendDropdown(guiLeft)
 					spriteCheck(guiLeft,"entity/solar-panel"),
 					"map_color_graphic_solar")
 	elseif not steam then
-		addRow(table,
-					"Steam Power",
-					"Steam Power",
-					spriteCheck(guiLeft,"entity/steam-engine"),
-					"map_color_graphic_steam")
+		if settings.startup["Use-Mod-Color-for-steam-generators"].value then
+			addRow(table,
+						"Steam Power",
+						"Steam Power",
+						spriteCheck(guiLeft,"entity/steam-engine"),
+						"map_color_graphic_steam")
+		end
 	end
 	guiLeft.EMC_frame.add{type="button", name="close", caption="Close", style="button"}
 end
