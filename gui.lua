@@ -39,6 +39,13 @@ function legendDropdown(guiLeft)
 					spriteCheck(guiLeft,"entity/express-transport-belt"),
 					"map_color_graphic_express")
 	end
+	if tech["logistics-4"] and tech["logistics-4"].researched then
+		addRow(table,
+					"belt4",
+					"All green belts, splitters and underground",
+					spriteCheck(guiLeft,"entity/turbo-transport-belt"),
+					"map_color_graphic_turbo")
+	end
 	for modName,_ in pairs(game.active_mods) do
 		if modName == "Visible_Bots" then
 			if tech["construction-robotics"] and tech["construction-robotics"].researched then
