@@ -11,6 +11,10 @@ data.raw["transport-belt"]["express-transport-belt"].friendly_map_color = {r = 0
 data.raw["splitter"]["express-splitter"].friendly_map_color = {r = 0.12, g = 0.54, b = 0.57} -- 30, 137, 145
 data.raw["underground-belt"]["express-underground-belt"].friendly_map_color = {r = 0.11, g = 0.50, b = 0.53} -- 29, 128, 136
 
+data.raw["transport-belt"]["turbo-transport-belt"].friendly_map_color = {r = 0.49, g = 0.58, b = 0.20} -- 125, 148, 51
+data.raw["splitter"]["turbo-splitter"].friendly_map_color = {r = 0.42, g = 0.55, b = 0.15} -- 103, 140, 38
+data.raw["underground-belt"]["turbo-underground-belt"].friendly_map_color = {r = 0.35, g = 0.52, b = 0.10} -- 89, 132, 25
+
 --changes color of pipes/storage tank
 -- data.raw["pipe"]["pipe"].friendly_map_color = {r = 0.29, g = 0.09, b = 0.56} -- 74, 23, 143
 -- data.raw["pipe-to-ground"]["pipe-to-ground"].friendly_map_color = {r = 0.29, g = 0.09, b = 0.56}
@@ -64,7 +68,7 @@ if data.raw["transport-belt"]["ultimate-transport-belt"] ~= nil then --green
 	data.raw["underground-belt"]["ultimate-underground-belt"].friendly_map_color = {r = 0.05, g = 0.75, b = 0.46} -- 14, 191, 119
 end
 
-if data.raw["transport-belt"]["turbo-transport-belt"] ~= nil then --purple
+if data.raw["transport-belt"]["turbo-transport-belt"] ~= nil and data.raw["transport-belt"]["ultimate-transport-belt"] ~= nil then --purple
 	data.raw["transport-belt"]["turbo-transport-belt"].friendly_map_color = {r = 0.97, g = 0.07, b = 1.0} -- 247, 18, 255
 	data.raw["splitter"]["turbo-splitter"].friendly_map_color = {r = 0.77, g = 0.06, b = 0.80} -- 198, 14, 204
 	data.raw["underground-belt"]["turbo-underground-belt"].friendly_map_color = {r = 0.73, g = 0.05, b = 0.75} -- 185, 14, 191

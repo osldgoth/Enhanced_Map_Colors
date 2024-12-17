@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.0.0
+Date: 11/1/2020
+  Changes:
+    - Updated mod to be compatible with factorio 2.0
+    - added additional green color for turbo transport belts
+---------------------------------------------------------------------------------------------------
 Version: 1.5.3
 Date: 04/30/2020
   Changes:

@@ -424,3 +424,22 @@ default_style.map_color_graphic_turrets = {
   hovered_graphical_set = color_graphics1(13, 0),
   clicked_graphical_set = color_graphics1(13, 0)
 }
+
+default_style.map_color_graphic_turbo = {
+  type = "button_style",
+  parent = "slot_button",
+
+  scalable = true,
+
+  top_padding = 1,
+  right_padding = 1,
+  bottom_padding = 1,
+  left_padding = 1,
+
+  width = 48,
+  width = 38,
+
+  default_graphical_set = color_graphics1(0, 9),
+  hovered_graphical_set = color_graphics1(0, 9),
+  clicked_graphical_set = color_graphics1(0, 9)
+}
