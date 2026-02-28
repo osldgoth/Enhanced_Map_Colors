@@ -22,7 +22,9 @@ end
 
 local function rechart(msg)
 	pprint(msg)
-	game.forces.player.rechart()
+	for _,force in pairs(game.forces) do
+		force.rechart()
+	end
 end
 	
 local function destroyOldMainGuiButton()
@@ -74,4 +76,5 @@ script.on_event(defines.events.on_research_finished, onResearchFinished)
 --redraws map to update colors when mod is installed on old save games.
 script.on_configuration_changed(modChange)
 
-script.on_event("EMC-Hotkey", customInputForLegend) --open/close gui legend
+--fix later?
+--script.on_event("EMC-Hotkey", customInputForLegend) --open/close gui legend

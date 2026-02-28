@@ -1,3 +1,4 @@
+--[[  --fix later?
 require "styles"
 
 data:extend(
@@ -12,4 +13,4 @@ data:extend(
 			--"game-only": The associated script event will fire when satisfied and block game events that conflict with the key sequence. Actions that are processed regardless of game paused state cannot be blocked.
 	  },
 	}
-)
+)]]
